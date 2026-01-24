@@ -1,0 +1,6 @@
+fastapi
+fastapi.security
+passlib.context
+jose
+datetime
+pydantic
