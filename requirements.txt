@@ -1,0 +1,6 @@
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+passlib[bcrypt]
+python-jose
