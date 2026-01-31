@@ -6,6 +6,3 @@ passlib[bcrypt]
 python-jose
 python-multipart
 sqlalchemy
-sqlalchemy.orm
-config
-database
