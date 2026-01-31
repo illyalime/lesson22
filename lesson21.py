@@ -5,7 +5,10 @@ from passlib.context import CryptContext
 from jose import jwt, JWTError
 from datetime import datetime, timedelta
 from pydantic import BaseModel
+from sqlalchemy.orm import Session
 from database import Base, engine
+from deps import get_db
+from models import UserModel
 
 Base.metadata.create_all(bind=engine)
 
@@ -177,3 +180,8 @@ def profile(user: User = Depends(get_current_user)):
 @app.get("/admin")
 def admin_panel(user: User = Depends(require_admin)):
     return {"message": "Welcome admin"}
+
+@app.get("/users")
+def get_users(db: Session = Depends(get_db)):
+    users = db.query(UserModel).all()
+    return users

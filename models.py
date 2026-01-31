@@ -1,8 +1,8 @@
 from sqlalchemy import Column, Integer, String
 from database import Base
 
-class User(Base):
-    tablename = "users"
+class UserModel(Base):
+    __tablename__ = "users"
 
     id = Column(Integer, primary_key=True)
     email = Column(String)
