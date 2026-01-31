@@ -5,13 +5,15 @@ from passlib.context import CryptContext
 from jose import jwt, JWTError
 from datetime import datetime, timedelta
 from pydantic import BaseModel
-from config import settings
+from database import Base, engine
+
+Base.metadata.create_all(bind=engine)
 
 # ==================================================
 # ⚙️ CONFIG
 # ==================================================
 
-SECRET_KEY = settings.SECRET_KEY
+SECRET_KEY = "hdjshhf"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 15
 REFRESH_TOKEN_EXPIRE_DAYS = 70
