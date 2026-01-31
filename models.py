@@ -7,3 +7,4 @@ class UserModel(Base):
     id = Column(Integer, primary_key=True)
     email = Column(String)
     name = Column(String)
+    password = Column(String)
